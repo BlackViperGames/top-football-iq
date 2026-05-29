@@ -7,60 +7,126 @@
 
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #081120 0%, #10203a 100%);
+  color: white;
+  min-height: 100vh;
+}
 
-    .container {
-      width: 90%;
-      max-width: 500px;
-    }
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+.header {
+  margin-top: 30px;
+}
 
-    p {
-      color: #cbd5e1;
-      margin-bottom: 30px;
-    }
+.logo {
+  font-size: 48px;
+}
 
-    button {
-      background: #22c55e;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 12px;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-    button:hover {
-      opacity: 0.9;
-    }
+.subtitle {
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.player-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.stat {
+  font-size: 18px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.play-btn {
+  background: #fbbf24;
+  color: #000;
+}
+
+.secondary-btn {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.level-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
   </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>⚽ TOP FOOTBALL IQ ⚽</h1>
-
-  <p>
+<div class="header">
+  <div class="logo">⚽</div>
+  <div class="title">TOP FOOTBALL IQ</div>
+  <div class="subtitle">
     Wie viel Fußball steckt wirklich in dir?
-  </p>
+  </div>
+</div>
 
-  <button onclick="startQuiz()">
-    Spiel starten
-  </button>
+<div class="player-card">
+  <h3>Spielerprofil</h3>
+
+  <div class="stats">
+    <div class="stat">
+      ⭐<br>Level 1
+    </div>
+
+    <div class="stat">
+      🏆<br>0 XP
+    </div>
+
+    <div class="stat">
+      🔥<br>0 Siege
+    </div>
+  </div>
+</div>
+
+<button class="play-btn" onclick="startQuiz()">
+  ▶ SPIELEN
+</button>
+
+<button class="secondary-btn">
+  🏅 Erfolge
+</button>
+
+<button class="secondary-btn">
+  ⚙ Einstellungen
+</button>
 </div>
 
 <script>
