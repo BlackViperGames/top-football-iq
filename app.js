@@ -1,410 +1,201 @@
 // =======================
-// TOP FOOTBALL IQ 2.2
+// TOP FOOTBALL IQ 2.3
 // =======================
 
 let xp = 0;
 let currentQuestion = 0;
 
 const beginnerQuestions = [
-
-{
-question:"Wie viele Spieler stehen pro Mannschaft bei Spielbeginn auf dem Feld?",
-answers:[
-"9 Spieler",
-"10 Spieler",
-"11 Spieler",
-"12 Spieler"
-],
-correct:2
-},
-
-{
-question:"Welcher Körperteil darf ein Feldspieler normalerweise nicht benutzen?",
-answers:[
-"Kopf",
-"Brust",
-"Hand",
-"Fuß"
-],
-correct:2
-},
-
-{
-question:"Wie lange dauert ein Fußballspiel regulär?",
-answers:[
-60 Minuten",
-"70 Minuten",
-"80 Minuten",
-"90 Minuten"
-],
-correct:3
-},
-
-{
-question:"Wie viele Halbzeiten gibt es?",
-answers:[
-1",
-"2",
-"3",
-"4"
-],
-correct:1
-},
-
-{
-question:"Welche Karte bedeutet Platzverweis?",
-answers:[
-Grün",
-"Blau",
-"Gelb",
-"Rot"
-],
-correct:3
-},
-
-{
-question:"Wie viele Punkte gibt es für einen Sieg?",
-answers:[
-1",
-"2",
-"3",
-"4"
-],
-correct:2
-},
-
-{
-question:"Wie heißt der Spieler im Tor?",
-answers:[
-Verteidiger",
-"Torwart",
-"Stürmer",
-"Kapitän"
-],
-correct:1
-},
-
-{
-question:"Was passiert beim Abseits?",
-answers:[
-Einwurf",
-"Freistoß",
-"Schiedsrichterball",
-"Elfmeter"
-],
-correct:1
-},
-
-{
-question:"Wie groß ist ein Team auf dem Feld?",
-answers:[
-8",
-"9",
-"10",
-"11"
-],
-correct:3
-},
-
-{
-question:"Wie nennt man einen Strafstoß?",
-answers:[
-Freistoß",
-"Abwurf",
-"Elfmeter",
-"Ecke"
-],
-correct:2
-}
-
+  {
+    question: "Wie viele Spieler stehen pro Mannschaft bei Spielbeginn auf dem Feld?",
+    answers: ["9 Spieler", "10 Spieler", "11 Spieler", "12 Spieler"],
+    correct: 2
+  },
+  {
+    question: "Wie lange dauert ein reguläres Fußballspiel?",
+    answers: ["60 Minuten", "70 Minuten", "80 Minuten", "90 Minuten"],
+    correct: 3
+  },
+  {
+    question: "Welche Karte bedeutet Platzverweis?",
+    answers: ["Gelb", "Blau", "Grün", "Rot"],
+    correct: 3
+  },
+  {
+    question: "Wie viele Punkte gibt es für einen Sieg?",
+    answers: ["1", "2", "3", "4"],
+    correct: 2
+  },
+  {
+    question: "Wie nennt man einen Strafstoß?",
+    answers: ["Ecke", "Abwurf", "Elfmeter", "Freistoß"],
+    correct: 2
+  }
 ];
 
-function openWorldMap(){
-
-const app = document.getElementById("app");
-
-app.innerHTML = `
-
-<div class="world-map">
-
-<button
-class="back-btn"
-onclick="goHome()">
-
-← Startseite
-
-</button>
-
-<h1 class="map-title">
-🌍 ROAD TO LEGEND
-</h1>
-
-<div class="profile-card">
-
-<h3>Karrierepfad</h3>
-
-<br>
-
-<p>
-Schließe Level ab und werde zur Fußball-Legende.
-</p>
-
-</div>
-
-<br>
-
-<div class="profile-card">
-
-<h3>⚽ Anfänger</h3>
-
-<p>
-Grundwissen Fußball
-</p>
-
-<br>
-
-<button
-class="play-button"
-onclick="startBeginnerLevel()">
-
-LEVEL STARTEN
-
-</button>
-
-</div>
-
-<br>
-
-<div class="profile-card">
-
-<h3>🔒 Amateur</h3>
-
-<p>
-Noch nicht freigeschaltet
-</p>
-
-</div>
-
-<br>
-
-<div class="profile-card">
-
-<h3>🔒 Profi</h3>
-
-<p>
-Noch nicht freigeschaltet
-</p>
-
-</div>
-
-<br>
-
-<div class="profile-card">
-
-<h3>🔒 Experte</h3>
-
-<p>
-Noch nicht freigeschaltet
-</p>
-
-</div>
-
-<br>
-
-<div class="profile-card">
-
-<h3>🔒 Legende</h3>
-
-<p>
-Noch nicht freigeschaltet
-</p>
-
-</div>
-
-</div>
-
-`;
+function goHome() {
+  location.reload();
 }
 
-function goHome(){
-location.reload();
+function openWorldMap() {
+  const app = document.getElementById("app");
+
+  app.innerHTML = `
+    <div class="world-map">
+
+      <button class="back-btn" onclick="goHome()">
+        ← Startseite
+      </button>
+
+      <h1 class="map-title">🌍 ROAD TO LEGEND</h1>
+
+      <div class="profile-card">
+        <h2>⚽ Anfänger</h2>
+        <p>Grundwissen Fußball</p>
+        <br>
+        <button class="play-button" onclick="startBeginnerLevel()">
+          LEVEL STARTEN
+        </button>
+      </div>
+
+      <br>
+
+      <div class="profile-card">
+        <h2>🔒 Amateur</h2>
+        <p>Noch nicht freigeschaltet</p>
+      </div>
+
+      <br>
+
+      <div class="profile-card">
+        <h2>🔒 Profi</h2>
+        <p>Noch nicht freigeschaltet</p>
+      </div>
+
+    </div>
+  `;
 }
 
-function startBeginnerLevel(){
-
-currentQuestion = 0;
-xp = 0;
-
-showQuestion();
+function startBeginnerLevel() {
+  currentQuestion = 0;
+  xp = 0;
+  showQuestion();
 }
 
-function showQuestion(){
+function showQuestion() {
 
-const q = beginnerQuestions[currentQuestion];
+  const q = beginnerQuestions[currentQuestion];
 
-const progress =
-((currentQuestion + 1)
-/
-beginnerQuestions.length)
-*100;
+  const progress =
+    ((currentQuestion + 1) / beginnerQuestions.length) * 100;
 
-const app =
-document.getElementById("app");
+  const app = document.getElementById("app");
 
-app.innerHTML = `
+  app.innerHTML = `
+    <div class="world-map">
 
-<div class="world-map">
+      <button class="back-btn" onclick="openWorldMap()">
+        ← Weltkarte
+      </button>
 
-<button
-class="back-btn"
-onclick="openWorldMap()">
+      <h1 class="map-title">
+        Frage ${currentQuestion + 1} / ${beginnerQuestions.length}
+      </h1>
 
-← Weltkarte
+      <div class="progress-bar">
+        <div
+          class="progress-fill"
+          style="width:${progress}%">
+        </div>
+      </div>
 
-</button>
+      <div class="profile-card">
 
-<h1 class="map-title">
+        <div class="quiz-question">
+          ${q.question}
+        </div>
 
-Frage
-${currentQuestion + 1}
-/
-${beginnerQuestions.length}
+        ${q.answers.map((answer, index) => `
+          <button
+            class="answer-card"
+            onclick="selectAnswer(${index})">
+            ${answer}
+          </button>
+        `).join("")}
 
-</h1>
+      </div>
 
-<div class="progress-bar">
-
-<div
-class="progress-fill"
-style="width:${progress}%">
-
-</div>
-
-</div>
-
-<div class="profile-card">
-
-<div class="quiz-question">
-
-${q.question}
-
-</div>
-
-${q.answers.map((answer,index)=>`
-
-<button
-class="answer-card"
-onclick="selectAnswer(${index})">
-
-${answer}
-
-</button>
-
-`).join("")}
-
-</div>
-
-</div>
-
-`;
+    </div>
+  `;
 }
 
-function selectAnswer(answerIndex){
+function selectAnswer(answerIndex) {
 
-const question =
-beginnerQuestions[currentQuestion];
+  const question = beginnerQuestions[currentQuestion];
 
-if(answerIndex === question.correct){
+  if (answerIndex === question.correct) {
+    xp += 10;
+  }
 
-xp += 10;
+  currentQuestion++;
 
+  if (currentQuestion >= beginnerQuestions.length) {
+    showResults();
+    return;
+  }
+
+  showQuestion();
 }
 
-currentQuestion++;
+function showResults() {
 
-if(
-currentQuestion
->=
-beginnerQuestions.length
-){
+  let stars = "⭐";
 
-showResults();
+  if (xp >= 40) {
+    stars = "⭐⭐⭐";
+  } else if (xp >= 20) {
+    stars = "⭐⭐";
+  }
 
-return;
-}
+  const app = document.getElementById("app");
 
-showQuestion();
-}
+  app.innerHTML = `
+    <div class="world-map">
 
-function showResults(){
+      <h1 class="map-title">
+        🏆 LEVEL GESCHAFFT
+      </h1>
 
-const stars =
-xp >= 90
-? "⭐⭐⭐"
-:
-xp >= 60
-? "⭐⭐"
-:
-"⭐";
+      <div class="profile-card">
 
-const app =
-document.getElementById("app");
+        <h2>${stars}</h2>
 
-app.innerHTML = `
+        <br>
 
-<div class="world-map">
+        <h3>Erhaltene XP</h3>
 
-<h1 class="map-title">
+        <br>
 
-🏆 LEVEL GESCHAFFT
+        <h1>${xp}</h1>
 
-</h1>
+        <br>
 
-<div class="profile-card">
+        <p>
+          Du hast das Anfänger-Level abgeschlossen.
+        </p>
 
-<h2>
+      </div>
 
-${stars}
+      <br>
 
-</h2>
+      <button
+        class="play-button"
+        onclick="openWorldMap()">
 
-<br>
+        ZUR WELTKARTE
 
-<h3>
+      </button>
 
-Erhaltene XP
-
-</h3>
-
-<br>
-
-<h1>
-
-${xp}
-
-</h1>
-
-<br>
-
-<p>
-
-Du hast das Anfänger-Level abgeschlossen.
-
-</p>
-
-</div>
-
-<br>
-
-<button
-class="play-button"
-onclick="openWorldMap()">
-
-ZUR WELTKARTE
-
-</button>
-
-</div>
-
-`;
+    </div>
+  `;
 }
