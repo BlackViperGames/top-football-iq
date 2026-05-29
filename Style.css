@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  background:
+  radial-gradient(circle at top, #1f3b73 0%, #081120 50%),
+  #081120;
+
+  color: white;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+.hero {
+
+  width: 100%;
+
+  max-width: 500px;
+
+  margin: auto;
+
+  padding: 40px 20px;
+
+  text-align: center;
+
+  position: relative;
+}
+
+.glow {
+
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  background: rgba(251,191,36,0.15);
+
+  filter: blur(100px);
+
+  left: 50%;
+
+  top: 0;
+
+  transform: translateX(-50%);
+
+  z-index: 0;
+}
+
+.logo {
+
+  font-size: 80px;
+
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 20px;
+}
+
+h1 {
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  margin-top: 10px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.slogan {
+
+  margin-top: 15px;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  opacity: 0.85;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.player-card {
+
+  margin-top: 35px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 24px;
+
+  padding: 20px;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.stat {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.stat span {
+
+  font-size: 28px;
+}
+
+.play-button {
+
+  margin-top: 30px;
+
+  width: 100%;
+
+  border: none;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #fbbf24,
+    #f59e0b
+  );
+
+  color: black;
+
+  font-weight: bold;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(251,191,36,0.35);
+}
+
+.play-button:active {
+
+  transform: scale(0.98);
+}
+
+.world-map {
+
+  width: 100%;
+
+  max-width: 500px;
+
+  margin: auto;
+
+  padding: 30px 20px;
+}
+
+.map-title {
+
+  text-align: center;
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  margin-bottom: 30px;
+}
+
+.level-card {
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 24px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  transition: 0.3s;
+}
+
+.level-card:hover {
+
+  transform: translateY(-3px);
+}
+
+.level-card h3 {
+
+  margin-bottom: 8px;
+}
+
+.level-card p {
+
+  opacity: 0.85;
+
+  margin-bottom: 12px;
+}
+
+.level-open {
+
+  border: 1px solid rgba(34,197,94,0.4);
+}
+
+.level-locked {
+
+  opacity: 0.5;
+}
+
+.level-btn {
+
+  width: 100%;
+
+  border: none;
+
+  padding: 14px;
+
+  border-radius: 16px;
+
+  background: #22c55e;
+
+  color: white;
+
+  font-weight: bold;
+}
+
+.locked-btn {
+
+  background: #475569;
+}
