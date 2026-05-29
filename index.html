@@ -64,10 +64,71 @@
 </div>
 
 <script>
-function startQuiz() {
-  alert("Quiz startet bald!");
-}
-</script>
 
-</body>
-</html>
+function startQuiz() {
+
+  const container = document.querySelector(".container");
+
+  container.innerHTML = `
+    <h1>⚽ LEVEL 1 ⚽</h1>
+
+    <h2>🟢 Anfänger</h2>
+
+    <p>
+      Kategorie:<br>
+      Fußball-Grundwissen
+    </p>
+
+    <p>
+      Fragen: 10
+    </p>
+
+    <p>
+      Belohnung: 100 Punkte
+    </p>
+
+    <p>
+      Schwierigkeit: ⭐
+    </p>
+
+    <button onclick="startLevel()">
+      LEVEL STARTEN
+    </button>
+  `;
+}
+
+function startLevel() {
+
+  const container = document.querySelector(".container");
+
+  container.innerHTML = `
+    <h2>Frage 1 von 10</h2>
+
+    <p>
+      Wie viele Spieler stehen pro Mannschaft bei Spielbeginn auf dem Feld?
+    </p>
+
+    <button onclick="checkAnswer(0)">A) 9</button>
+    <br><br>
+
+    <button onclick="checkAnswer(1)">B) 10</button>
+    <br><br>
+
+    <button onclick="checkAnswer(2)">C) 11</button>
+    <br><br>
+
+    <button onclick="checkAnswer(3)">D) 12</button>
+  `;
+}
+
+function checkAnswer(answer) {
+
+  if(answer === 2) {
+    alert("Richtig! ⚽");
+  } else {
+    alert("Leider falsch!");
+  }
+
+}
+
+</script>
