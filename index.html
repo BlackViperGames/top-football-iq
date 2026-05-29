@@ -5,196 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOP FOOTBALL IQ</title>
 
-  <style>
-    body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(180deg, #081120 0%, #10203a 100%);
-  color: white;
-  min-height: 100vh;
-}
-
-.container {
-  max-width: 420px;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-}
-
-.header {
-  margin-top: 30px;
-}
-
-.logo {
-  font-size: 48px;
-}
-
-.title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.subtitle {
-  opacity: 0.8;
-  margin-bottom: 30px;
-}
-
-.player-card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.stats {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.stat {
-  font-size: 18px;
-}
-
-button {
-  width: 100%;
-  border: none;
-  border-radius: 16px;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 12px;
-  cursor: pointer;
-}
-
-.play-btn {
-  background: #fbbf24;
-  color: #000;
-}
-
-.secondary-btn {
-  background: rgba(255,255,255,0.1);
-  color: white;
-}
-
-.level-card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 20px;
-  padding: 20px;
-  margin-top: 20px;
-}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="header">
-  <div class="logo">⚽</div>
-  <div class="title">TOP FOOTBALL IQ</div>
-  <div class="subtitle">
-    Wie viel Fußball steckt wirklich in dir?
-  </div>
-</div>
+<div id="app">
 
-<div class="player-card">
-  <h3>Spielerprofil</h3>
+  <section class="hero">
 
-  <div class="stats">
-    <div class="stat">
-      ⭐<br>Level 1
+    <div class="glow"></div>
+
+    <div class="logo">
+      ⚽
     </div>
 
-    <div class="stat">
-      🏆<br>0 XP
+    <h1>TOP FOOTBALL IQ</h1>
+
+    <p class="slogan">
+      Wie viel Fußball steckt wirklich in dir?
+    </p>
+
+    <div class="player-card">
+
+      <div class="stat">
+        <span>⭐</span>
+        <strong>Level 1</strong>
+      </div>
+
+      <div class="stat">
+        <span>🏆</span>
+        <strong>0 XP</strong>
+      </div>
+
+      <div class="stat">
+        <span>🔥</span>
+        <strong>0 Siege</strong>
+      </div>
+
     </div>
 
-    <div class="stat">
-      🔥<br>0 Siege
-    </div>
-  </div>
-</div>
-
-<button class="play-btn" onclick="startQuiz()">
-  ▶ SPIELEN
-</button>
-
-<button class="secondary-btn">
-  🏅 Erfolge
-</button>
-
-<button class="secondary-btn">
-  ⚙ Einstellungen
-</button>
-</div>
-
-<script>
-
-function startQuiz() {
-
-  const container = document.querySelector(".container");
-
-  container.innerHTML = `
-    <h1>⚽ LEVEL 1 ⚽</h1>
-
-    <h2>🟢 Anfänger</h2>
-
-    <p>
-      Kategorie:<br>
-      Fußball-Grundwissen
-    </p>
-
-    <p>
-      Fragen: 10
-    </p>
-
-    <p>
-      Belohnung: 100 Punkte
-    </p>
-
-    <p>
-      Schwierigkeit: ⭐
-    </p>
-
-    <button onclick="startLevel()">
-      LEVEL STARTEN
+    <button class="play-button" onclick="openWorldMap()">
+      ▶ SPIELEN
     </button>
-  `;
-}
 
-function startLevel() {
+  </section>
 
-  const container = document.querySelector(".container");
+</div>
 
-  container.innerHTML = `
-    <h2>Frage 1 von 10</h2>
+<script src="app.js"></script>
 
-    <p>
-      Wie viele Spieler stehen pro Mannschaft bei Spielbeginn auf dem Feld?
-    </p>
-
-    <button onclick="checkAnswer(0)">A) 9</button>
-    <br><br>
-
-    <button onclick="checkAnswer(1)">B) 10</button>
-    <br><br>
-
-    <button onclick="checkAnswer(2)">C) 11</button>
-    <br><br>
-
-    <button onclick="checkAnswer(3)">D) 12</button>
-  `;
-}
-
-function checkAnswer(answer) {
-
-  if(answer === 2) {
-    alert("Richtig! ⚽");
-  } else {
-    alert("Leider falsch!");
-  }
-
-}
-
-</script>
+</body>
+</html>
