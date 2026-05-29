@@ -1,228 +1,410 @@
-function openWorldMap() {
+// =======================
+// TOP FOOTBALL IQ 2.2
+// =======================
 
-  const app = document.getElementById("app");
+let xp = 0;
+let currentQuestion = 0;
 
-  app.innerHTML = `
+const beginnerQuestions = [
 
-  <div class="world-map">
+{
+question:"Wie viele Spieler stehen pro Mannschaft bei Spielbeginn auf dem Feld?",
+answers:[
+"9 Spieler",
+"10 Spieler",
+"11 Spieler",
+"12 Spieler"
+],
+correct:2
+},
 
-    <h1 class="map-title">
-      🌍 ROAD TO LEGEND
-    </h1>
+{
+question:"Welcher Körperteil darf ein Feldspieler normalerweise nicht benutzen?",
+answers:[
+"Kopf",
+"Brust",
+"Hand",
+"Fuß"
+],
+correct:2
+},
 
-    <div class="level-path">
+{
+question:"Wie lange dauert ein Fußballspiel regulär?",
+answers:[
+60 Minuten",
+"70 Minuten",
+"80 Minuten",
+"90 Minuten"
+],
+correct:3
+},
 
-      <div class="level-card level-open">
+{
+question:"Wie viele Halbzeiten gibt es?",
+answers:[
+1",
+"2",
+"3",
+"4"
+],
+correct:1
+},
 
-        <h3>⚽ Anfänger</h3>
+{
+question:"Welche Karte bedeutet Platzverweis?",
+answers:[
+Grün",
+"Blau",
+"Gelb",
+"Rot"
+],
+correct:3
+},
 
-        <p>
-          Fußball-Grundwissen
-        </p>
+{
+question:"Wie viele Punkte gibt es für einen Sieg?",
+answers:[
+1",
+"2",
+"3",
+"4"
+],
+correct:2
+},
 
-        <button
-          class="level-btn"
-          onclick="startBeginnerLevel()">
-          LEVEL STARTEN
-        </button>
+{
+question:"Wie heißt der Spieler im Tor?",
+answers:[
+Verteidiger",
+"Torwart",
+"Stürmer",
+"Kapitän"
+],
+correct:1
+},
 
-      </div>
+{
+question:"Was passiert beim Abseits?",
+answers:[
+Einwurf",
+"Freistoß",
+"Schiedsrichterball",
+"Elfmeter"
+],
+correct:1
+},
 
-      <div class="path-arrow">⬇</div>
+{
+question:"Wie groß ist ein Team auf dem Feld?",
+answers:[
+8",
+"9",
+"10",
+"11"
+],
+correct:3
+},
 
-      <div class="level-card level-locked">
-
-        <h3>🏟 Amateur</h3>
-
-        <p>
-          Vereine & Nationalteams
-        </p>
-
-        <button class="level-btn locked-btn">
-          GESPERRT
-        </button>
-
-      </div>
-
-      <div class="path-arrow">⬇</div>
-
-      <div class="level-card level-locked">
-
-        <h3>🏆 Profi</h3>
-
-        <p>
-          Champions League
-        </p>
-
-        <button class="level-btn locked-btn">
-          GESPERRT
-        </button>
-
-      </div>
-
-      <div class="path-arrow">⬇</div>
-
-      <div class="level-card level-locked">
-
-        <h3>👑 Experte</h3>
-
-        <p>
-          Historische Fußballmomente
-        </p>
-
-        <button class="level-btn locked-btn">
-          GESPERRT
-        </button>
-
-      </div>
-
-      <div class="path-arrow">⬇</div>
-
-      <div class="level-card level-locked">
-
-        <h3>🌟 Legende</h3>
-
-        <p>
-          Nur für wahre Fußballgenies
-        </p>
-
-        <button class="level-btn locked-btn">
-          GESPERRT
-        </button>
-
-      </div>
-
-    </div>
-
-    <button
-      class="play-button"
-      style="margin-top:30px"
-      onclick="goHome()">
-
-      ← ZURÜCK
-
-    </button>
-
-  </div>
-
-  `;
+{
+question:"Wie nennt man einen Strafstoß?",
+answers:[
+Freistoß",
+"Abwurf",
+"Elfmeter",
+"Ecke"
+],
+correct:2
 }
 
-function goHome() {
-  location.reload();
+];
+
+function openWorldMap(){
+
+const app = document.getElementById("app");
+
+app.innerHTML = `
+
+<div class="world-map">
+
+<button
+class="back-btn"
+onclick="goHome()">
+
+← Startseite
+
+</button>
+
+<h1 class="map-title">
+🌍 ROAD TO LEGEND
+</h1>
+
+<div class="profile-card">
+
+<h3>Karrierepfad</h3>
+
+<br>
+
+<p>
+Schließe Level ab und werde zur Fußball-Legende.
+</p>
+
+</div>
+
+<br>
+
+<div class="profile-card">
+
+<h3>⚽ Anfänger</h3>
+
+<p>
+Grundwissen Fußball
+</p>
+
+<br>
+
+<button
+class="play-button"
+onclick="startBeginnerLevel()">
+
+LEVEL STARTEN
+
+</button>
+
+</div>
+
+<br>
+
+<div class="profile-card">
+
+<h3>🔒 Amateur</h3>
+
+<p>
+Noch nicht freigeschaltet
+</p>
+
+</div>
+
+<br>
+
+<div class="profile-card">
+
+<h3>🔒 Profi</h3>
+
+<p>
+Noch nicht freigeschaltet
+</p>
+
+</div>
+
+<br>
+
+<div class="profile-card">
+
+<h3>🔒 Experte</h3>
+
+<p>
+Noch nicht freigeschaltet
+</p>
+
+</div>
+
+<br>
+
+<div class="profile-card">
+
+<h3>🔒 Legende</h3>
+
+<p>
+Noch nicht freigeschaltet
+</p>
+
+</div>
+
+</div>
+
+`;
 }
 
-function startBeginnerLevel() {
-
-  const app = document.getElementById("app");
-
-  app.innerHTML = `
-
-  <div class="world-map">
-
-    <h1 class="map-title">
-      ⚽ ANFÄNGER
-    </h1>
-
-    <div class="level-card level-open">
-
-      <h3>
-        Level 1
-      </h3>
-
-      <p>
-        Fußball-Grundwissen
-      </p>
-
-      <p>
-        Fragen: 10
-      </p>
-
-      <p>
-        Belohnung: 100 XP
-      </p>
-
-      <p>
-        Schwierigkeit: ⭐
-      </p>
-
-      <button
-        class="level-btn"
-        onclick="startQuiz()">
-
-        QUIZ STARTEN
-
-      </button>
-
-    </div>
-
-    <button
-      class="play-button"
-      style="margin-top:30px"
-      onclick="openWorldMap()">
-
-      ← ZURÜCK
-
-    </button>
-
-  </div>
-
-  `;
+function goHome(){
+location.reload();
 }
 
-function startQuiz() {
+function startBeginnerLevel(){
 
-  const app = document.getElementById("app");
+currentQuestion = 0;
+xp = 0;
 
-  app.innerHTML = `
-
-  <div class="world-map">
-
-    <h1 class="map-title">
-      Frage 1 / 10
-    </h1>
-
-    <div class="level-card level-open">
-
-      <h3>
-        Wie viele Spieler stehen pro Mannschaft bei Spielbeginn auf dem Feld?
-      </h3>
-
-      <br>
-
-      <button class="level-btn" onclick="correctAnswer()">
-        A) 11
-      </button>
-
-      <br><br>
-
-      <button class="level-btn" onclick="wrongAnswer()">
-        B) 10
-      </button>
-
-      <br><br>
-
-      <button class="level-btn" onclick="wrongAnswer()">
-        C) 12
-      </button>
-
-      <br><br>
-
-      <button class="level-btn" onclick="wrongAnswer()">
-        D) 9
-      </button>
-
-    </div>
-
-  </div>
-
-  `;
+showQuestion();
 }
 
-function correctAnswer() {
-  alert("⚽ Richtig!");
+function showQuestion(){
+
+const q = beginnerQuestions[currentQuestion];
+
+const progress =
+((currentQuestion + 1)
+/
+beginnerQuestions.length)
+*100;
+
+const app =
+document.getElementById("app");
+
+app.innerHTML = `
+
+<div class="world-map">
+
+<button
+class="back-btn"
+onclick="openWorldMap()">
+
+← Weltkarte
+
+</button>
+
+<h1 class="map-title">
+
+Frage
+${currentQuestion + 1}
+/
+${beginnerQuestions.length}
+
+</h1>
+
+<div class="progress-bar">
+
+<div
+class="progress-fill"
+style="width:${progress}%">
+
+</div>
+
+</div>
+
+<div class="profile-card">
+
+<div class="quiz-question">
+
+${q.question}
+
+</div>
+
+${q.answers.map((answer,index)=>`
+
+<button
+class="answer-card"
+onclick="selectAnswer(${index})">
+
+${answer}
+
+</button>
+
+`).join("")}
+
+</div>
+
+</div>
+
+`;
 }
 
-function wrongAnswer() {
-  alert("❌ Falsch!");
+function selectAnswer(answerIndex){
+
+const question =
+beginnerQuestions[currentQuestion];
+
+if(answerIndex === question.correct){
+
+xp += 10;
+
+}
+
+currentQuestion++;
+
+if(
+currentQuestion
+>=
+beginnerQuestions.length
+){
+
+showResults();
+
+return;
+}
+
+showQuestion();
+}
+
+function showResults(){
+
+const stars =
+xp >= 90
+? "⭐⭐⭐"
+:
+xp >= 60
+? "⭐⭐"
+:
+"⭐";
+
+const app =
+document.getElementById("app");
+
+app.innerHTML = `
+
+<div class="world-map">
+
+<h1 class="map-title">
+
+🏆 LEVEL GESCHAFFT
+
+</h1>
+
+<div class="profile-card">
+
+<h2>
+
+${stars}
+
+</h2>
+
+<br>
+
+<h3>
+
+Erhaltene XP
+
+</h3>
+
+<br>
+
+<h1>
+
+${xp}
+
+</h1>
+
+<br>
+
+<p>
+
+Du hast das Anfänger-Level abgeschlossen.
+
+</p>
+
+</div>
+
+<br>
+
+<button
+class="play-button"
+onclick="openWorldMap()">
+
+ZUR WELTKARTE
+
+</button>
+
+</div>
+
+`;
 }
